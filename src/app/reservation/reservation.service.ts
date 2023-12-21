@@ -22,7 +22,10 @@ export class ReservationService {
   }
 
   GetReservation(id: string): Reservation | undefined {
-    return this.reservations.find(res => res.id);
+    let reservations =  this.reservations.find(res => res.id === id);
+    console.log('GetReservation: ', reservations);
+    
+    return reservations;
   }
 
   addReservation(reservation: Reservation): void {
@@ -37,8 +40,9 @@ export class ReservationService {
     localStorage.setItem("reservations",JSON.stringify(this.reservations)) 
   }
 
-  updateReservation(updateReservation: Reservation): void {
-    let index = this.reservations.findIndex(res => res.id === updateReservation.id)    
+  updateReservation(id: string, updateReservation: Reservation): void {
+
+    let index = this.reservations.findIndex(res => res.id === id)    
     this.reservations[index] = updateReservation
     localStorage.setItem("reservations",JSON.stringify(this.reservations)) 
   }
