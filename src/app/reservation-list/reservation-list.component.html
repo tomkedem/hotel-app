@@ -2,10 +2,10 @@
 
 <ul *ngIf="reservations.length; else noReservation">
     <li *ngFor="let reservation of reservations">
-        Guest: {{reservation.guestName}}
-        Email: {{reservation.guestEmail}}
-        Room No.: {{reservation.roomNumber}}
-        Check-In Date: {{reservation.checkInDate}}
+        Guest: {{reservation.guestName}} <br>
+        Email: {{reservation.guestEmail}} <br>
+        Room No.: {{reservation.roomNumber}} <br>
+        Check-In Date: {{reservation.checkInDate}}<br>
         Check-Out Date: {{reservation.checkOutDate}}       
     </li>
 </ul>
